@@ -12,7 +12,17 @@ const PORT = process.env.PORT || 5000;
 
 connectDB();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://localhost:3000',
+    'https://url-shortner-three-omega.vercel.app',
+    /\.vercel\.app$/,
+    /\.netlify\.app$/,
+    /\.github\.io$/
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 app.use('/api', urlRoutes);
