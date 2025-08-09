@@ -1,0 +1,137 @@
+.url-shortener {
+  padding: 4rem 0;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+}
+
+.url-shortener .container {
+  text-align: center;
+}
+
+.url-shortener h1 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 3rem;
+}
+
+.url-form {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.input-group {
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.url-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 12px;
+}
+
+.shorten-btn {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 1rem;
+  border-radius: 12px;
+  min-width: 150px;
+}
+
+.shorten-btn:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.error-message {
+  background: #fee;
+  color: #c33;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  border: 1px solid #fcc;
+}
+
+.result-section {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.result-section h3 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.result-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.result-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  background: #f8f9fa;
+  border: 2px solid #e1e5e9;
+  border-radius: 12px;
+}
+
+.copy-btn {
+  padding: 1rem 1.5rem;
+  background: #28a745;
+  color: white;
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+.copy-btn:hover {
+  background: #218838;
+}
+
+.reset-btn {
+  padding: 0.75rem 1.5rem;
+  background: #6c757d;
+  color: white;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.reset-btn:hover {
+  background: #5a6268;
+}
+
+@media (max-width: 768px) {
+  .input-group,
+  .result-container {
+    flex-direction: column;
+  }
+  
+  .url-shortener h1 {
+    font-size: 2rem;
+  }
+  
+  .url-form,
+  .result-section {
+    padding: 1.5rem;
+  }
+}
