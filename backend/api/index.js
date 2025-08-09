@@ -25,8 +25,8 @@ app.use(cors({
 }));
 app.use(express.json());
 
-app.use('/', urlRoutes);
-app.use('/auth', authRoutes);
+app.use('/api', urlRoutes);
+app.use('/api/auth', authRoutes);
 
 app.get('/:shortCode', async (req, res) => {
   try {
@@ -46,7 +46,7 @@ app.get('/:shortCode', async (req, res) => {
   }
 });
 
-app.get('/health', (req, res) => {
+app.get('/api/health', (req, res) => {
   res.json({ message: 'URL Shortener API is running!' });
 });
 
