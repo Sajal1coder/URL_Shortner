@@ -1,0 +1,42 @@
+const express = require('express');
+const cors = require('cors');
+require('dotenv').config();
+
+const connectDB = require('../config/database');
+const urlRoutes = require('../routes/urlRoutes');
+const authRoutes = require('../routes/authRoutes');
+const Url = require('../models/Url');
+
+const app = express();
+
+connectDB();
+
+app.use(cors());
+app.use(express.json());
+
+app.use('/api', urlRoutes);
+app.use('/api/auth', authRoutes);
+
+app.get('/:shortCode', async (req, res) => {
+  try {
+    const { shortCode } = req.params;
+    const url = await Url.findOne({ shortCode });
+    
+    if (!url) {
+      return res.status(404).json({ error: 'URL not found' });
+    }
+
+    url.clicks += 1;
+    await url.save();
+    res.redirect(url.originalUrl);
+    
+  } catch (error) {
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+app.get('/api/health', (req, res) => {
+  res.json({ message: 'URL Shortener API is running!' });
+});
+
+module.exports = app;
