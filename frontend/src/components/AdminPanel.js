@@ -11,7 +11,7 @@ const AdminPanel = ({ user, onLogout }) => {
 
   useEffect(() => {
     fetchUrls();
-  }, [fetchUrls]);
+  }, []);
 
   const fetchUrls = async () => {
     try {
