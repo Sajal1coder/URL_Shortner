@@ -16,6 +16,7 @@ app.use(cors({
     'http://localhost:3000',
     'https://localhost:3000',
     'https://url-shortner-x218.vercel.app',
+    'https://url-shortner-three-omega.vercel.app',
     /\.vercel\.app$/,
     /\.netlify\.app$/,
     /\.github\.io$/

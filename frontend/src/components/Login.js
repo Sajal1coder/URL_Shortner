@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import API_BASE_URL from '../config/api';
 import './Login.css';
 
 const Login = ({ onLogin }) => {
@@ -29,7 +30,7 @@ const Login = ({ onLogin }) => {
     setError('');
 
     try {
-      const response = await axios.post('/api/auth/login', credentials);
+      const response = await axios.post(`${API_BASE_URL}/api/auth/login`, credentials);
       
 
       localStorage.setItem('adminToken', response.data.token);

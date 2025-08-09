@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import API_BASE_URL from '../config/api';
 import './AdminPanel.css';
 
 const AdminPanel = ({ user, onLogout }) => {
@@ -16,7 +17,7 @@ const AdminPanel = ({ user, onLogout }) => {
     try {
       setLoading(true);
       const token = localStorage.getItem('adminToken');
-      const response = await axios.get('/api/urls', {
+      const response = await axios.get(`${API_BASE_URL}/api/urls`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

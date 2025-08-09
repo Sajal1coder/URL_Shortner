@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import API_BASE_URL from '../config/api';
 import AdminPanel from './AdminPanel';
 import Login from './Login';
 
@@ -21,7 +22,7 @@ const ProtectedAdmin = () => {
     }
 
     try {
-      const response = await axios.post('/api/auth/verify', {}, {
+      const response = await axios.post(`${API_BASE_URL}/api/auth/verify`, {}, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
