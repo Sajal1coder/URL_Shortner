@@ -15,7 +15,7 @@ app.use(cors({
   origin: [
     'http://localhost:3000',
     'https://localhost:3000',
-    'https://url-shortner-three-omega.vercel.app',
+    'https://url-shortner-x218.vercel.app',
     /\.vercel\.app$/,
     /\.netlify\.app$/,
     /\.github\.io$/
@@ -24,8 +24,8 @@ app.use(cors({
 }));
 app.use(express.json());
 
-app.use('/api', urlRoutes);
-app.use('/api/auth', authRoutes);
+app.use('/', urlRoutes);
+app.use('/auth', authRoutes);
 
 app.get('/:shortCode', async (req, res) => {
   try {
@@ -45,7 +45,7 @@ app.get('/:shortCode', async (req, res) => {
   }
 });
 
-app.get('/api/health', (req, res) => {
+app.get('/health', (req, res) => {
   res.json({ message: 'URL Shortener API is running!' });
 });
 
